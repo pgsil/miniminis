@@ -1,0 +1,35 @@
+body{
+		background: #1e1e1e;
+		color: white;
+		font-family: sans-serif;
+		font-weight: bolder;
+
+	}
+	#main{
+	    position: absolute;
+	    margin: auto;
+	    top: 0;
+	    right: 0;
+	    bottom: 0;
+	    left: 0;
+	    width: 80%;
+	    height: 80%;
+	}
+	.block{
+		width: 5em;
+		height: 5em;
+		background: gray;
+		display: inline-block;
+		margin: 2px;
+		border-radius: 1em;
+	}
+	#gameboard{
+		overflow: hidden; /* clear the float */
+		margin: auto;
+		width: 100%;
+	}
+	.tinytext{
+		font-size: 8pt;
+		font-weight: 300;
+		max-width: 250px;
+	}
