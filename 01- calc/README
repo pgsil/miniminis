@@ -1,0 +1,18 @@
+01 - calc
+
+A lot of people make calculators soon after hello world. I had never made a calculator before this one.
+The goal was making a calculator that worked like Windows 10's. That means that I had to code in a lot of scenarios (like type of the last button pressed, etc).
+It seems to work!
+
+If you press 2, PLUS, 2, EQUAL, the screen will display the result, 4.
+If you press EQUAL again, the expected result is the screen displaying 6, because it repeats the last operation (PLUS 2).
+
+Then there's the OPERATOR behaviors.
+If you press 2 and PLUS, and then press MINUS, the screen will display "2-". If you then press MULTIPLY, the screen displays "2*" as intended.
+If you press 2, PLUS and 2, the screen displays "2-2". If you then press PLUS, the screen will do the operation (2-2 = 0), and display "0+", as intended.
+
+A few observations:
+• I did use .eval(). I didn't want to look at how people made calculators before this miniproject, but I did afterwards and apparently a lot of people dislike .eval() for many different reasons.
+I could probably rewrite this without the use of .eval(), which I might do soon. This was fun, not using .eval() will probably be even more fun!
+• It's preeeeetty verbose. Sure, I wanted it to be very readable, but still, I'm fairly confident that this could be much shorter.
+• I didn't have time for a decimal button!
