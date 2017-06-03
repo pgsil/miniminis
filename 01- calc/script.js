@@ -1,128 +1,35 @@
 /*JQuery document ready*/
 $(document).ready(
 	function(){
-		/*Binds click for numbers and operators button*/
-		$(".calc-btn").each(function(index, obj){
-			$(this).on('click', function() { 
-				checkButtonType($(this).text());
-				addToDisplay($(this).text());
-			});
-		});
-		/*Binds click for equal button*/
-		$(".calc-btn-equal").on('click', function(){
-			checkButtonType($(this).text());
-			lastMathExpression = mathExpression;
-			doEval();
-			hasOperator = false;
-		});
-		/*Binds click for clear button*/
-		$(".calc-btn-clear").on('click', function(){
-			doClear();
-		})
-	}
-);
 
-/*Do the actual calculations*/
-let doEval = function(){
-	let result = 0;
+		var mathExpression = "";
+		var lastMathExpression = "";
 
-	try {
-		result = eval(mathExpression); 
-	} catch (e) {
-		alert("ERROR! That's not a valid expression! " + e);
-		result = "ERROR";
-	}
-	mathExpression = "";
-
-	addToDisplay(result);
-}
-
-/*Clears the current expression, the last expression and the display*/
-let doClear = function(){
-	mathExpression = "";
-	lastMathExpression = "";
-	$(".calc-display-text").html(mathExpression, console.log('DISPLAY CLEARED'));
-}
-
-/*Add something to the display*/
-let addToDisplay = function(string){
-	mathExpression = mathExpression + string;
-
-	$(".calc-display-text").html(mathExpression, console.log('updated display: ' + mathExpression));
-};
-
-/*Checks the type of button that was pressed and sets lastKeyType accordingly*/
-let checkButtonType = function(text){
-	switch(text){
-		case "1": case "2": case "3":
-		case "4": case "5": case "6":
-		case "7": case "8": case "9":
-		case "0":
-			console.log("clicked a NUMBER!");
-			currentKeyType = "NUMBER";
-			keyTypeDecider();
-			lastKeyType = "NUMBER";
-		break;
-
-		case "+":
-		case "-":
-		case "*":
-		case "/":
-			console.log("clicked an OPERATOR!");
-			currentKeyType = "OPERATOR";
-			keyTypeDecider();
-			lastKeyType = "OPERATOR";
-		break;
-
-		case "=":
-			console.log("clicked EQUAL!");
-			currentKeyType = "EQUAL";
-			keyTypeDecider();
-			lastKeyType = "EQUAL";
-		break;
-
-		default:
-			console.log("ERROR - NO CONFIG IN CHECKBUTTONTYPE SWITCH - FIX ME: " + text);
-			currentKeyType = "UNDEFINED";
-			keyTypeDecider();
-			lastKeyType = "UNDEFINED";
-		break;
-	}
-}
-
-/*Decides what action to take safely according to keypress*/
-let keyTypeDecider = function(){
-	switch(currentKeyType){
-		case "NUMBER":
-			/*If we just pressed equal, got a result, and then press a number,*/
-			/*clear the display for a new operation.*/
-			if(lastKeyType === "EQUAL"){
-				doClear();
-				break;
-			}
-			else{
-				break;	
-			}		
-
-		case "OPERATOR":
+		let lastKeyType;
+		let setLastKeypress = function(keytype){
+			lastKeyType = keytype;
+		}
+		let currentKeyType;
+		let setCurrentKeyType= function(keytype){
+			currentKeyType = keytype;
+		}
+		let hasOperator = false;
+		let operatorCheck = function(){
 			/*If we have an operator in the expression but the last one isn't it,*/
 			/*just do the eval*/
 			if(hasOperator && lastKeyType != "OPERATOR"){
 				doEval();
-				break;
 			}
 			/*If the last character is an operator, change it to the one just pressed*/
 			else if(hasOperator && lastKeyType === "OPERATOR"){
-				mathExpression = mathExpression.substring(0, mathExpression.length-1)
-				break;
+				mathExpression = mathExpression.substring(0, mathExpression.length-1);
 			}
 			/*If there's no operator yet, just set hasOperator to true*/
 			else{
 				hasOperator = true;
-				break;
 			}
-
-		case "EQUAL":
+		}
+		let equalCheck = function(){
 			/*If you just pressed equal, and you press it again, */
 			/*we'll redo the last operation.*/
 			if(lastKeyType === "EQUAL"){
@@ -136,18 +43,83 @@ let keyTypeDecider = function(){
 				mathExpression = mathExpression + previousOperation;
 				
 				lastMathExpression = mathExpression;
+			}
+		}
+		/*Updates display with input var toDisplay*/
+		let updateDisplay = function(toDisplay){
+			$(".calc-display-text").html(toDisplay, console.log('updated display: ' + mathExpression));
+		}
 
-				break;
+		/*Binds click for NUMBER buttons*/
+		$(".calc-btn").each(function(index, obj){
+			$(this).on('click', function() { 
+				if(lastKeyType === "EQUAL"){
+					doClear();
+				}
+				addToDisplay($(this).text());
+				setLastKeypress("NUMBER");
+			});
+		});
+
+		/*Binds click for OPERATOR buttons*/
+		$(".calc-btn-op").each(function(index, obj){
+			$(this).on('click', function() {
+				setCurrentKeyType("OPERATOR");
+
+				operatorCheck();
+
+				addToDisplay($(this).text());
+
+				setLastKeypress("OPERATOR");
+			});
+		});
+
+		/*Binds click for EQUAL button*/
+		$(".calc-btn-equal").on('click', function(){
+			equalCheck();
+
+			lastMathExpression = mathExpression;
+
+			doEval();
+
+			hasOperator = false;
+
+			setLastKeypress("EQUAL");
+		});
+
+		/*Binds click for CLEAR button*/
+		$(".calc-btn-clear").on('click', function(){
+			doClear();
+		});
+	
+		/*Do the actual calculations*/
+		let doEval = function(){
+			let result = 0;
+
+			try {
+				result = eval(mathExpression); 
+			} catch (e) {
+				alert("ERROR! That's not a valid expression! " + e);
+				result = "ERROR";
 			}
-			else{
-				break;
-			}
+			mathExpression = "";
+
+			addToDisplay(result);
+		};
+
+		/*Clears the current expression, the last expression and the display*/
+		let doClear = function(){
+			mathExpression = "";
+			lastMathExpression = "";
+			$(".calc-display-text").html(mathExpression);
+		};
+
+		/*Add something to the display*/
+		let addToDisplay = function(string){
+			mathExpression = mathExpression + string;
+
+			updateDisplay(mathExpression);
+		};
 	}
-}
+);
 
-var currentKeyType;
-var lastKeyType;
-var hasOperator = false;
-
-var mathExpression = "";
-var lastMathExpression = "";
