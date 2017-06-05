@@ -1,0 +1,44 @@
+body {
+    background-color: #f7f7f7;
+}
+.todo-item {
+    background-color: white;
+    margin-bottom: 8px;
+    display: flex;
+    border-radius: 4px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+.btn{
+	background-color: teal;
+}
+.delet-btn {
+    width: 50px;
+    background-color: #bd5e5e;
+    align-items: stretch;
+    opacity: 1;
+    text-align: center!important;
+}
+.delet-btn:hover{
+    background-color: #e85757;
+    color: #a00303!important;
+}
+.delet-btn:hover{
+	opacity: 1;
+}
+.todo-textdiv {
+    display: inline-block;
+    height: 100%;
+    vertical-align: top;
+    padding: 5px;
+    overflow: visible;    
+    word-break: break-word;
+}
+.fa{
+    color: #7b1616;
+}
+.fa:hover{
+    color: #a00303;
+}
+.container{
+    max-width: 800px!important
+}
