@@ -1,5 +1,9 @@
 body {
     background-color: #f7f7f7;
+    font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif!important;
+}
+.align-center {
+    text-align: center;
 }
 .todo-item {
     background-color: white;
@@ -13,13 +17,13 @@ body {
 }
 .delet-btn {
     width: 50px;
-    background-color: #bd5e5e;
+    /*background-color: #bd5e5e;*/
     align-items: stretch;
     opacity: 1;
     text-align: center!important;
 }
 .delet-btn:hover{
-    background-color: #e85757;
+    /*background-color: #e85757;*/
     color: #a00303!important;
 }
 .delet-btn:hover{
@@ -29,16 +33,34 @@ body {
     display: inline-block;
     height: 100%;
     vertical-align: top;
-    padding: 5px;
-    overflow: visible;    
+    padding: 8px;
+    overflow: visible;
     word-break: break-word;
+    font-size: .9em;
 }
 .fa{
     color: #7b1616;
+    line-height: 36px!important;
+    margin-left: 10px;
 }
 .fa:hover{
     color: #a00303;
 }
 .container{
     max-width: 800px!important
+}
+h1{
+    font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+}
+.tinyheader {
+    margin-bottom: 1em;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 4px;
+    border: 1px solid #6e9e22;
+    background: #abde5c;
+    font-weight: bold;
+    color: #516d25;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.13);
 }

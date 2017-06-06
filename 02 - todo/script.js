@@ -7,9 +7,9 @@ let ready = function(){
 	LSInitialize();
 	renderItems();
 	bindSubmit();
-}
+};
 
-
+/*Creates and renders to-do task elements*/
 let renderItems = function(){
 	let object = getLobj();
 	
@@ -47,30 +47,41 @@ let renderItems = function(){
 		document.getElementById("todos").appendChild(elem);
 
 		console.log(document.getElementById("text-div-id" + i).offsetHeight);
-	}
-}
+	};
 
+	/*Hide the "add a reminder!" thing if there are todos*/
+	if(object.length){
+		document.getElementById("todo-reminder").style.display="none";
+	}
+	else{
+		document.getElementById("todo-reminder").style.display="block";
+	};
+};
+/*Cleans the view and rerenders all elements*/
 let reRenderApp = function(){
 	document.getElementById("todos").innerHTML = "";
 	renderItems();
-}
-
+};
+/*Returns the localStorage object: array of strings when parsed*/
 let getLobj = function(){
 	return JSON.parse(localStorage.todostorage);
 };
-
+/*Adds an item to the localStorage object*/
 let addLobj = function(data, bShouldRerender){
 	let object = getLobj();
-	object.push(data);
+	/*If we have input in the input field: */
+	if(data.length > 0){
+		object.push(data);
 
-	localStorage.setItem("todostorage", JSON.stringify(object));
+		localStorage.setItem("todostorage", JSON.stringify(object));
 
-	if(bShouldRerender){
-		reRenderApp();
-		console.log("App rerendered.");
+		if(bShouldRerender){
+			reRenderApp();
+			console.log("App rerendered.");
+		}
 	}
 };
-
+/*Removes an item from the localStorage with a given index*/
 let removeLobj = function(index){
 	let object = getLobj();
 
@@ -78,14 +89,14 @@ let removeLobj = function(index){
 
 	localStorage.setItem("todostorage", JSON.stringify(object));
 };
-
+/*If there is no localStorage object, we initialize it as an empty array*/
 let LSInitialize = function(){
 	if (localStorage.todostorage == undefined || JSON.parse(localStorage.todostorage) == "undefined"){
 		let array = [];
 		localStorage.setItem("todostorage", JSON.stringify(array));
 	}
 };
-
+/*Binds the the text input and the add button to functions*/
 let bindSubmit = function(){
 	let textinput = document.getElementById("todo-add");
 	let submitbtn = document.getElementById("todo-submit-btn");
@@ -97,8 +108,4 @@ let bindSubmit = function(){
 		addLobj(textinput.value, true);
 		textinput.value = "";
 	}
-}
-
-let onSubmit = function(value){
-	console.log(value)
 };
