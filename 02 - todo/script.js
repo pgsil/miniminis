@@ -48,14 +48,6 @@ let renderItems = function(){
 
 		console.log(document.getElementById("text-div-id" + i).offsetHeight);
 	};
-
-	/*Hide the "add a reminder!" thing if there are todos*/
-	if(object.length){
-		document.getElementById("todo-reminder").style.display="none";
-	}
-	else{
-		document.getElementById("todo-reminder").style.display="block";
-	};
 };
 /*Cleans the view and rerenders all elements*/
 let reRenderApp = function(){
