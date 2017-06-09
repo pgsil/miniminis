@@ -4,4 +4,4 @@
 
 For this project I didn't want to use anything but normal JS.
 
-![gif](http://i.imgur.com/xq1wipT.gif)
+![gif](http://i.imgur.com/h0rnuN9.gif)
