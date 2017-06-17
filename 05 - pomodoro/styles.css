@@ -1,0 +1,45 @@
+html{
+	background: #eaeaea;
+}
+
+.main{
+	height: auto;
+    margin: 0 auto -80px; /* footer height + space */
+    min-height: 100%;
+    padding: 0 0 80px; /* footer height + space */
+    box-sizing: border-box;
+    overflow: auto;
+}
+.footbehave {
+    height: 60px;
+    padding-top: 20px;
+    display: block;
+    margin-top: 20px;
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    border-top: 1px solid rgba(82, 82, 82, 0.44);
+    border-bottom: 1px solid rgba(82, 82, 82, 0.44);
+}
+.footbehave a {
+    color: #40469e;
+    font-weight: 500;
+}
+.bigger-text{
+	font-size: 2em;
+}
+.big-text{
+	font-size: 1.5em;
+}
+
+/*Bulma overrides*/
+.hero{
+	background-color: rgba(0, 0, 0, 0);
+}
+.title{
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.05);
+}
+
+#progress-bar{
+	width: 50%
+}
