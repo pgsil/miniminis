@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>	
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.css" />
+	<script src="jquery-3.2.1.min.js"></script>
+	<script src="anime.min.js"></script>
 	<script type="text/javascript" src="script.js"></script>	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.css" />
 	<link rel="stylesheet" type="text/css" href="styles.css">
-	<title>06 - simosez</title>
+	<title>06 - simonsez 🎮</title>
 </head>
 <body>
 	<div class="container">
 		<section class="hero">
 		  <div class="hero-body">
 		      <h1 class="title">
-		        05 - pomodoro 🍅 
+		        06 - simonsez 🎮
 		      </h1>
 		      <h2 class="subtitle">
-		        get things done
+		        click them in order
 		      </h2>
 		  </div>
 		</section>
@@ -25,8 +27,7 @@
 				&nbsp;
 			</div>
 			<div id="info-div" class="box notification is-warning column">
-				Set a session length, set a break length and pomodoro away.<br/>
-				The app will let you know when you can take a break and when your break time is over.
+				Click the buttons in the same order as they light up.
 			</div>
 			<div class="column is-2">
 				&nbsp;
@@ -35,7 +36,53 @@
 
 		<!-- Main app div -->
 		<div class="columns">
-			
+			<div class="column is-2">
+				&nbsp;
+			</div>
+
+			<div id="simon-btns-container" class="column has-text-centered">
+
+				<div class="column has-text-centered is-paddingless">
+					<div id="bt-01" class="simon-btn"></div>
+					<div id="bt-03" class="simon-btn"></div>
+				</div>
+
+				<div class="column has-text-centered is-paddingless">
+					<div id="bt-02" class="simon-btn"></div>				
+					<div id="bt-04" class="simon-btn"></div>
+				</div>		
+				
+			</div>
+
+			<div class="column is-2">
+				&nbsp;
+			</div>
+		</div>
+
+		<div id="audiofiles">
+			<audio id="snd1">
+			  <source  src="./mp3/1.mp3" type="audio/mpeg">
+			</audio>
+
+			<audio id="snd2">
+			  <source src="./mp3/2.mp3" type="audio/mpeg">
+		  	</audio>
+
+		  	<audio id="snd3">
+			  <source src="./mp3/3.mp3" type="audio/mpeg">
+			</audio>
+
+			<audio id="snd4">
+			  <source src="./mp3/4.mp3" type="audio/mpeg">
+			</audio>
+
+			<audio id="snd-good">
+			  <source src="./mp3/correct.mp3" type="audio/mpeg">
+			</audio>
+
+			<audio id="snd-bad">
+			  <source src="./mp3/wrong.mp3" type="audio/mpeg">
+			</audio>
 		</div>
 
 	</div>
@@ -44,7 +91,7 @@
 	  <div class="container">
 	    <div class="content has-text-centered">
 	      <p>
-	        <strong>05 - pomodoro</strong> by <a href="https://github.com/pgsil/miniminis">Pedro Gonçalves</a>.
+	        <strong>05 - simonsez</strong> by <a href="https://github.com/pgsil/miniminis">Pedro Gonçalves</a>.
 	      <p>
 	        <a class="icon" href="https://github.com/pgsil/">
 	          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="25" height="30" viewBox="0 0 100 100">

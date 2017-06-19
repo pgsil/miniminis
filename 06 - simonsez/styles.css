@@ -1,28 +1,31 @@
 html{
-	background: #eaeaea;
+	background: #171717;
 }
 
+/*Footer styling*/
 .footbehave {
     height: 60px;
     border-top: 1px solid rgba(82, 82, 82, 0.44);
     border-bottom: 1px solid rgba(82, 82, 82, 0.44);
+    background-color: #0e0e0e;
 }
 .footbehave a {
     color: #40469e;
     font-weight: 500;
 }
+svg{
+    fill: #c7c7c7;
+}
 
+/*Footer fixes to stick to the end*/
 html {
     position: relative;
     min-height: 100%;
 }
-
 body {
     margin: 0 0 60px; /* bottom = footer height */
 }
-
 footer {
-    background-color: orange;
     position: absolute;
     left: 0;
     bottom: 0;
@@ -37,4 +40,30 @@ footer {
 }
 .title{
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.05);
+    color: #c7c7c7;
+}
+.subtitle{
+    color: #c7c7c7;
+}
+
+
+/*Simon*/
+.simon-btn{
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    background-color: black;
+    margin: 10px;
+}
+#bt-01{
+    background-color: #a90000;
+}
+#bt-02{
+    background-color: #00008a;
+}
+#bt-03{
+    background-color: #005000;
+}
+#bt-04{
+    background-color: #ad9500;
 }
