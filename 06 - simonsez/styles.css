@@ -1,0 +1,40 @@
+html{
+	background: #eaeaea;
+}
+
+.footbehave {
+    height: 60px;
+    border-top: 1px solid rgba(82, 82, 82, 0.44);
+    border-bottom: 1px solid rgba(82, 82, 82, 0.44);
+}
+.footbehave a {
+    color: #40469e;
+    font-weight: 500;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin: 0 0 60px; /* bottom = footer height */
+}
+
+footer {
+    background-color: orange;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    overflow:hidden;
+}
+
+/*Bulma overrides*/
+.hero{
+	background-color: rgba(0, 0, 0, 0);
+}
+.title{
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.05);
+}

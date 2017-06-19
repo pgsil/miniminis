@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<script src="jquery-3.2.1.min.js"></script>
-	<script src="jquery-ui.min.js"></script>
-	<script src="moment.js"></script>
-	<script src="progressbar.min.js"></script>
+<head>	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.css" />
 	<script type="text/javascript" src="script.js"></script>	
 	<link rel="stylesheet" type="text/css" href="styles.css">
-	<title>05 - pomodoro</title>
+	<title>06 - simosez</title>
 </head>
 <body>
-	<div class="container main">
+	<div class="container">
 		<section class="hero">
 		  <div class="hero-body">
 		      <h1 class="title">
@@ -37,99 +33,11 @@
 			</div>
 		</div>
 
-		<!-- Time display div -->
+		<!-- Main app div -->
 		<div class="columns">
-			<div class="column is-one-quarter">
-				&nbsp;
-			</div>
-
-			<div class="box column">
-			<br/>
-				<div class="columns">
-					<div class="column is-one-quarter">
-						&nbsp;
-					</div>
-					<div id="progress-bar"></div>
-					<div class="column is-one-quarter">
-						&nbsp;
-					</div>
-				</div>
-				
-				<div class="time-mode has-text-centered">
-				</div>
-
-				<div class="time-display has-text-centered bigger-text">
-				</div>
-
-				<div id="progress-bar"></div>
-			</div>
-
-			<div class="column is-one-quarter">
-				&nbsp;
-			</div>
+			
 		</div>
 
-		<!-- Start button div -->
-		<div class="columns">
-			<div class="column is-one-quarter">
-				&nbsp;
-			</div>
-			<div class="column">
-				<button id="start-countdown" class="button is-success is-fullwidth">Start</button>
-			</div>
-			<div class="column is-one-quarter">
-				&nbsp;
-			</div>
-		</div>
-
-		<!-- Time controls div -->
-		<div class="columns">
-			<div class="column is-one-quarter">
-			&nbsp;
-			</div>
-
-			<div class="column">
-				<div class="time-controls box has-text-centered">
-					<span class="bigger-text">Work Time</span>
-					<div id="work-time-preview" class="big-text">
-						0h 25m 0s
-					</div>
-						<br/>
-					<span>Minutes:</span>
-						<br/>
-					<button id="input-minutes-plus" class="time-control-btn button">+</button>
-					<button id="input-minutes-minus" class="time-control-btn button">-</button>
-						<br/>
-					<span>Seconds:</span>
-						<br/>
-					<button id="input-seconds-plus" class="time-control-btn button">+</button>
-					<button id="input-seconds-minus" class="time-control-btn button">-</button>				
-				</div>
-			</div>
-
-			<div class="column">
-				<div class="time-controls box has-text-centered">
-					<span class="bigger-text">Break Time</span>
-					<div id="break-time-preview" class="big-text">
-					0h 05m 0s
-					</div>
-						<br/>
-					<span>Minutes:</span>
-						<br/>
-					<button id="input-break-minutes-plus" class="time-control-btn button">+</button>
-					<button id="input-break-minutes-minus" class="time-control-btn button">-</button>
-						<br/>
-					<span>Seconds:</span>
-						<br/>
-					<button id="input-break-seconds-plus" class="time-control-btn button">+</button>
-					<button id="input-break-seconds-minus" class="time-control-btn button">-</button>				
-				</div>		
-			</div>
-
-			<div class="column is-one-quarter">
-			&nbsp;
-			</div>
-		</div>
 	</div>
 
 	<footer class="footer footbehave">
