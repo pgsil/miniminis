@@ -3,3 +3,23 @@ textarea,
   min-height: inherit;
   height: auto;
 }
+
+.footbehave {
+    height: 60px;
+    padding-top: 20px;
+    display: block;
+    margin-top: 20px;
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-top: 1px solid rgba(82, 82, 82, 0.44);
+    border-bottom: 1px solid rgba(82, 82, 82, 0.44);
+}
+.footbehave a {
+    color: #40469e;
+    font-weight: 500;
+}
+
